@@ -1,0 +1,25 @@
+{
+  "$comment": "Single source of truth for old → new Uzbek Latin conversion. Every implementation (TypeScript, Rust, Swift, C#, IBus, Fcitx5) must read these rules and pass core/test-vectors.json. The result's case follows the FIRST letter of the pair. No exception lists: the tutuq belgisi (ʼ) never follows o, g, oʻ or gʻ in Uzbek Latin.",
+  "version": 1,
+  "apostrophes": [
+    { "char": "ʻ", "codepoint": "U+02BB", "name": "MODIFIER LETTER TURNED COMMA" },
+    { "char": "ʼ", "codepoint": "U+02BC", "name": "MODIFIER LETTER APOSTROPHE" },
+    { "char": "`", "codepoint": "U+0060", "name": "GRAVE ACCENT (backtick)" },
+    { "char": "'", "codepoint": "U+0027", "name": "APOSTROPHE" },
+    { "char": "‘", "codepoint": "U+2018", "name": "LEFT SINGLE QUOTATION MARK" },
+    { "char": "’", "codepoint": "U+2019", "name": "RIGHT SINGLE QUOTATION MARK" },
+    { "char": "´", "codepoint": "U+00B4", "name": "ACUTE ACCENT" }
+  ],
+  "apostropheRules": [
+    { "first": "o", "lower": "ö", "upper": "Ö", "lowerCodepoint": "U+00F6", "upperCodepoint": "U+00D6" },
+    { "first": "g", "lower": "ğ", "upper": "Ğ", "lowerCodepoint": "U+011F", "upperCodepoint": "U+011E" }
+  ],
+  "digraphRules": [
+    { "first": "s", "second": "h", "lower": "ş", "upper": "Ş", "lowerCodepoint": "U+015F", "upperCodepoint": "U+015E" },
+    { "first": "c", "second": "h", "lower": "ç", "upper": "Ç", "lowerCodepoint": "U+00E7", "upperCodepoint": "U+00C7" }
+  ],
+  "escape": {
+    "char": "\\",
+    "description": "Typing the escape char between the two letters of a pair keeps them literal: o\\ʻ → oʻ, s\\h → sh. Can be disabled in settings."
+  }
+}
