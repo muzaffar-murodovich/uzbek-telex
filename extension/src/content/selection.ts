@@ -1,4 +1,4 @@
-// "Belgilangan matnni yangi alifboga öğiriş" (context menu).
+// "Belgilangan matnni yangi alifboga ögiriş" (context menu).
 
 import { convertText } from "@uzbek-telex/core";
 import { getSelectionFor } from "./caret";

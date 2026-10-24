@@ -33,7 +33,7 @@ Test page: `python3 -m http.server 8080 -d extension/e2e/fixtures`, then open ht
 | 16 | popup | toggle main switch | badge OFF/ON, label Yoqilgan/Öçirilgan |
 | 17 | popup | turn off „Şu saytda işlasin“ | no conversion on this site only; OFF badge on this tab only |
 | 18 | popup | turn off backslash switch, type `docs\help` | `docs\help` |
-| 19 | context menu | select `Oʻzbekiston, Toshkent` in a textarea → right-click → „Belgilangan matnni yangi alifboga öğiriş“ | `Özbekiston, Toşkent`; Ctrl+Z reverts |
+| 19 | context menu | select `Oʻzbekiston, Toshkent` in a textarea → right-click → „Belgilangan matnni yangi alifboga ögiriş“ | `Özbekiston, Toşkent`; Ctrl+Z reverts |
 | 20 | context menu | select read-only text on any page → menu item | panel shows converted text; „Nusxa olish“ copies it |
 | 21 | IME | with an IME (e.g. Japanese/Chinese) compose text containing `sh` | no interference |
 | 22 | DevTools | Network tab of the service worker and of a page while typing | no requests from the extension |

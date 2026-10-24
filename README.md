@@ -10,7 +10,7 @@
 | Ch ch | Ç ç   |
 
 Bu dastur siz odatdagidek, eski usulda yozayotganingizda harflarni avtomatik ravişda
-yangi alifboga öğiradi. Yangi klaviatura örganiş şart emas.
+yangi alifboga ögiradi. Yangi klaviatura örganiş şart emas.
 
 ## Qanday işlaydi
 
@@ -22,7 +22,7 @@ yangi alifboga öğiradi. Yangi klaviatura örganiş şart emas.
 
 ## Eski harf kerak bölsa
 
-1. **Backspace.** Harf öğirilişi bilanoq <kbd>Backspace</kbd> bosing — `ş` yana `sh` ga qaytadi
+1. **Backspace.** Harf ögirilişi bilanoq <kbd>Backspace</kbd> bosing — `ş` yana `sh` ga qaytadi
    (siz yozgan apostrof ham aynan saqlanadi). Ikkinçi <kbd>Backspace</kbd> odatdagidek öçiradi.
 2. **Teskari çiziq.** Ikki harf orasiga `\` yozing: `s\h` → `sh`, `o\ʻ` → `oʻ`.
    Bu imkoniyatni sozlamalarda öçiriş mumkin.
@@ -30,8 +30,8 @@ yangi alifboga öğiradi. Yangi klaviatura örganiş şart emas.
    (uzun inglizça yoki eski yozuvdagi matn uçun).
 4. **Sayt böyiça.** Kengaytma oynasida „Şu saytda işlasin“ tugmasini öçiring.
 
-Tayyor matnni ham öğiriş mumkin: matnni belgilang → siçqonçaning öng tugmasi →
-„Belgilangan matnni yangi alifboga öğiriş“.
+Tayyor matnni ham ögiriş mumkin: matnni belgilang → siçqonçaning öng tugmasi →
+„Belgilangan matnni yangi alifboga ögiriş“.
 
 ## Örnatiş (Chrome)
 

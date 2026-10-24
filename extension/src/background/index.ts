@@ -19,7 +19,7 @@ function showState(on: boolean, tabId?: number): void {
 chrome.runtime.onInstalled.addListener(() => {
   chrome.contextMenus.create({
     id: MENU_ID,
-    title: "Belgilangan matnni yangi alifboga öğiriş",
+    title: "Belgilangan matnni yangi alifboga ögiriş",
     contexts: ["selection"],
   });
 });
