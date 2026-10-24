@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "Yangi alifbo — özbekça yozish yordamçisi",
+  "name": "Yangi alifbo — özbekça yoziş yordamçisi",
   "short_name": "Yangi alifbo",
   "version": "0.1.0",
   "description": "Eski yozuvni yozayotganingizda yangi alifboga öğiradi: oʻ→ö, gʻ→ğ, sh→ş, ch→ç. Tarmoqqa heç narsa yubormaydi.",
@@ -35,7 +35,7 @@
   "commands": {
     "toggle-enabled": {
       "suggested_key": { "default": "Alt+Shift+U" },
-      "description": "Yoqish / öçirish"
+      "description": "Yoqiş / öçiriş"
     }
   },
   "permissions": ["storage", "contextMenus"]

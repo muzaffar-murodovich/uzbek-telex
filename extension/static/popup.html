@@ -1,2 +1,61 @@
 <!doctype html>
-<html lang="uz"><head><meta charset="utf-8"><title>Yangi alifbo</title></head><body><script src="popup.js"></script></body></html>
+<html lang="uz">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Yangi alifbo</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>
+    <img src="icons/icon-32.png" width="28" height="28" alt="">
+    <h1>Yangi alifbo</h1>
+  </header>
+
+  <label class="switch main">
+    <span>
+      <strong id="enabled-label">Yoqilgan</strong>
+      <small>Yozayotganingizda eski harflar yangisiga öğiriladi</small>
+    </span>
+    <input type="checkbox" id="enabled" role="switch">
+  </label>
+
+  <label class="switch" id="site-row">
+    <span>
+      <strong>Şu saytda işlasin</strong>
+      <small id="site-host"></small>
+    </span>
+    <input type="checkbox" id="site" role="switch">
+  </label>
+  <p class="note" id="site-unavailable" hidden>Bu sahifada işlamaydi (Chrome ichki sahifalari, Web Store).</p>
+
+  <label class="switch">
+    <span>
+      <strong>Teskari çiziq (\) bilan saqlash</strong>
+      <small>s\h → sh, o\ʻ → oʻ</small>
+    </span>
+    <input type="checkbox" id="escape" role="switch">
+  </label>
+
+  <section>
+    <h2>Qoidalar</h2>
+    <table>
+      <tr><td>oʻ</td><td>→</td><td>ö</td><td class="gap"></td><td>sh</td><td>→</td><td>ş</td></tr>
+      <tr><td>gʻ</td><td>→</td><td>ğ</td><td class="gap"></td><td>ch</td><td>→</td><td>ç</td></tr>
+    </table>
+    <p>Har qanday apostrof işlaydi: <code>ʻ ' ` ’ ‘ ʼ ´</code></p>
+  </section>
+
+  <section>
+    <h2>Eski harf kerak bölsa</h2>
+    <ul>
+      <li>Öğiriliş bilanoq <kbd>Backspace</kbd> bosing: ş → sh</li>
+      <li>Harflar orasiga <kbd>\</kbd> yozing: s\h → sh</li>
+      <li><kbd id="shortcut">Alt+Shift+U</kbd> — yoqiş / öçiriş</li>
+    </ul>
+  </section>
+
+  <footer>Heç qanday maʼlumot yiğilmaydi va internetga yuborilmaydi.</footer>
+  <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+:root {
+  --bg: #ffffff;
+  --fg: #1b1f23;
+  --muted: #59636e;
+  --line: #d8dee4;
+  --accent: #0e7c86;
+  --track: #c4ccd4;
+  --code: #f2f4f6;
+  color-scheme: light dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #1e2228; --fg: #e6edf3; --muted: #9aa4ae; --line: #3a414a; --track: #4a525c; --code: #2a3038; }
+}
+* { box-sizing: border-box; }
+body { margin: 0; width: 320px; padding: 14px 16px 12px; background: var(--bg); color: var(--fg);
+  font: 13px/1.45 system-ui, -apple-system, "Segoe UI", sans-serif; }
+header { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+h1 { font-size: 17px; margin: 0; }
+h2 { font-size: 13px; margin: 0 0 6px; color: var(--muted); font-weight: 600; }
+section { border-top: 1px solid var(--line); padding-top: 10px; margin-top: 10px; }
+.switch { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 8px 0; cursor: pointer; }
+.switch span { display: flex; flex-direction: column; min-width: 0; }
+.switch small { color: var(--muted); overflow-wrap: anywhere; }
+.switch.main strong { font-size: 15px; }
+input[role="switch"] { appearance: none; flex: none; width: 38px; height: 22px; border-radius: 11px; background: var(--track);
+  position: relative; cursor: pointer; transition: background .15s; margin: 0; }
+input[role="switch"]::after { content: ""; position: absolute; top: 3px; left: 3px; width: 16px; height: 16px; border-radius: 50%;
+  background: #fff; transition: transform .15s; }
+input[role="switch"]:checked { background: var(--accent); }
+input[role="switch"]:checked::after { transform: translateX(16px); }
+input[role="switch"]:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+input[role="switch"]:disabled { opacity: .45; cursor: default; }
+table { border-collapse: collapse; font-size: 15px; margin-bottom: 6px; }
+td { padding: 1px 4px; }
+td.gap { width: 24px; }
+p, ul { margin: 0; }
+ul { padding-left: 18px; }
+li { margin: 3px 0; }
+code, kbd { font: 12px ui-monospace, monospace; background: var(--code); border-radius: 4px; padding: 1px 5px; }
+.note { color: var(--muted); padding: 2px 0 6px; }
+footer { margin-top: 12px; color: var(--muted); font-size: 12px; }
