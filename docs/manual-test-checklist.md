@@ -28,7 +28,7 @@ Test page: `python3 -m http.server 8080 -d extension/e2e/fixtures`, then open ht
 | 11 | Gmail | compose → body and subject: type `Salom, Toshkent!` then Backspace-undo test | converts; **discard the draft, do not send** |
 | 12 | Telegram Web (web.telegram.org) | type in the message box `choʻl` + Backspace test | `çöl`; **don't send** (clear the box) |
 | 13 | GitHub | edit a file (CodeMirror) and type `sh` | unchanged (code editor excluded); a comment box **does** convert |
-| 14 | Google Docs | type `sh` | likely unchanged — known limitation |
+| 14 | Google Docs | type `sh` | unchanged, context menu unavailable — known limitation (confirmed) |
 | 15 | shortcut | press Alt+Shift+U, type `sh` | badge shows OFF, `sh` stays; press again → ON |
 | 16 | popup | toggle main switch | badge OFF/ON, label Yoqilgan/Öçirilgan |
 | 17 | popup | turn off „Şu saytda işlasin“ | no conversion on this site only; OFF badge on this tab only |

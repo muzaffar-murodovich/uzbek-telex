@@ -50,7 +50,7 @@ Sozlamalar faqat sizning kompyuteringizda saqlanadi. Batafsil: [PRIVACY.md](PRIV
 
 ## Çeklovlar
 
-- Google Docs, Google Sheets, Figma kabi „canvas“ asosidagi muharrirlarda işlamasligi mumkin.
+- **Google Docs**, Google Sheets, Figma kabi „canvas“ asosidagi muharrirlarda işlamaydi (öng tugma menyusi ham). Hozirça yöli: matnni boşqa maydonda yozib (yoki öng tugma bilan ögirib), Docs'ga nusxalang.
 - Kod muharrirlarida (CodeMirror, Monaco, Ace, GitHub/GitLab kod oynalari) ataylab öçirilgan.
 - Parol, email, URL va raqam maydonlarida işlamaydi.
 - Chrome içki sahifalari (`chrome://`) va Chrome Web Store'da kengaytmalar umuman işlamaydi.

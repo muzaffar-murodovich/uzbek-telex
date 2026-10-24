@@ -80,8 +80,11 @@ so formatting is kept), or shows the result in a small panel with a copy button 
 selection is read-only.
 
 ## Known limitations
-- Canvas-based editors (Google Docs, Sheets, Slides, Figma) don't use DOM text input; they
-  may not work.
+- Canvas-based editors (Google Docs, Sheets, Slides, Figma) don't work (confirmed for Docs,
+  2026-10-24). Docs types into a hidden, always-empty contenteditable inside an iframe, so there is
+  no text before the caret to pair with; it also replaces the browser context menu and has no DOM
+  selection, so the context-menu command is unavailable too. A Docs-specific adapter (own key
+  buffer + synthetic Backspace/insert) is possible but brittle; the desktop version is the real fix.
 - Pages that intercept Backspace on `keydown` and delete text themselves bypass Backspace undo.
 - Chrome blocks extensions on `chrome://` pages and the Chrome Web Store.
 - `Selection.modify` and `execCommand` are not standardised; both work in all Chromium browsers.
