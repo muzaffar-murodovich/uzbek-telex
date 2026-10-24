@@ -1,0 +1,23 @@
+{
+  "name": "@uzbek-telex/extension",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs",
+    "watch": "node build.mjs --watch",
+    "icons": "node scripts/make-icons.mjs",
+    "typecheck": "tsc --noEmit",
+    "e2e": "npm run build && node --test e2e/"
+  },
+  "dependencies": {
+    "@uzbek-telex/core": "*"
+  },
+  "devDependencies": {
+    "@resvg/resvg-js": "^2.6.2",
+    "@types/chrome": "^0.0.280",
+    "esbuild": "^0.24.0",
+    "puppeteer": "^23.6.0",
+    "typescript": "^5.6.0"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "manifest_version": 3,
+  "name": "Yangi alifbo — özbekça yozish yordamçisi",
+  "short_name": "Yangi alifbo",
+  "version": "0.1.0",
+  "description": "Eski yozuvni yozayotganingizda yangi alifboga öğiradi: oʻ→ö, gʻ→ğ, sh→ş, ch→ç. Tarmoqqa heç narsa yubormaydi.",
+  "icons": {
+    "16": "icons/icon-16.png",
+    "32": "icons/icon-32.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Yangi alifbo",
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "32": "icons/icon-32.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "all_frames": true,
+      "match_about_blank": true,
+      "match_origin_as_fallback": true,
+      "run_at": "document_start"
+    }
+  ],
+  "commands": {
+    "toggle-enabled": {
+      "suggested_key": { "default": "Alt+Shift+U" },
+      "description": "Yoqish / öçirish"
+    }
+  },
+  "permissions": ["storage", "contextMenus"]
+}
