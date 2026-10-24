@@ -1,0 +1,13 @@
+{
+  "name": "uzbek-telex",
+  "private": true,
+  "description": "Yangi özbek alifbosida yozish yordamçisi / Uzbek new-alphabet typing helper",
+  "license": "MIT",
+  "workspaces": ["core", "extension"],
+  "scripts": {
+    "test": "npm test -w core",
+    "build": "npm run build -w extension",
+    "e2e": "npm run e2e -w extension",
+    "typecheck": "npm run typecheck -w core && npm run typecheck -w extension"
+  }
+}
