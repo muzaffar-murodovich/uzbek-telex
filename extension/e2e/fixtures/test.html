@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="uz">
+<head>
+  <meta charset="utf-8">
+  <title>Yangi alifbo — test sahifasi</title>
+  <style>
+    body { font: 16px system-ui, sans-serif; max-width: 640px; margin: 24px auto; padding: 0 16px; }
+    label { display: block; margin: 14px 0 4px; font-weight: 600; }
+    input, textarea, [contenteditable] { width: 100%; box-sizing: border-box; font: inherit; padding: 6px; border: 1px solid #999; border-radius: 6px; }
+    [contenteditable] { min-height: 3em; }
+  </style>
+</head>
+<body>
+  <h1>Test sahifasi</h1>
+  <p>Şu yerda yozib köring: <code>oʻ gʻ sh ch</code>.</p>
+  <label for="text">input[type=text]</label>
+  <input id="text" type="text">
+  <label for="search">input[type=search]</label>
+  <input id="search" type="search">
+  <label for="ta">textarea</label>
+  <textarea id="ta" rows="3"></textarea>
+  <label>contenteditable</label>
+  <div id="ce" contenteditable="true"></div>
+  <label>contenteditable (inline formatting)</label>
+  <div id="ce-rich" contenteditable="true"><b>s</b></div>
+  <label>contenteditable (two paragraphs)</label>
+  <div id="ce-blocks" contenteditable="true"><div>s</div><div><br></div></div>
+  <label for="pw">input[type=password] (must NOT convert)</label>
+  <input id="pw" type="password">
+  <label for="email">input[type=email] (must NOT convert)</label>
+  <input id="email" type="email">
+  <label>Code editor (.cm-editor, must NOT convert)</label>
+  <div class="cm-editor"><textarea id="code" rows="2"></textarea></div>
+  <label>Read-only text for context-menu conversion</label>
+  <p id="static">Oʻzbekiston poytaxti — Toshkent shahri.</p>
+</body>
+</html>

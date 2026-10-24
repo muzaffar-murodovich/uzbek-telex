@@ -62,14 +62,40 @@ function convertRangeInEditable(sel: Selection, range: Range): void {
     }
   }
 
+  let editedDirectly = false;
   for (const { node, start, end } of parts.reverse()) {
     const original = node.data.slice(start, end);
     const converted = convertText(original);
     if (converted === original) continue;
-    sel.setBaseAndExtent(node, start, node, end);
-    if (!document.execCommand("insertText", false, converted)) {
-      node.replaceData(start, end - start, converted);
+
+    // Replace only the span that changed, so neighbouring text keeps its nodes.
+    let prefix = 0;
+    while (original[prefix] === converted[prefix]) prefix++;
+    let suffix = 0;
+    while (
+      suffix < original.length - prefix &&
+      suffix < converted.length - prefix &&
+      original[original.length - 1 - suffix] === converted[converted.length - 1 - suffix]
+    ) suffix++;
+    const from = start + prefix;
+    const to = end - suffix;
+    const insert = converted.slice(prefix, converted.length - suffix);
+
+    // insertText at the very start of a text node takes the formatting of the
+    // element before it (e.g. <b>), so edit the node directly there.
+    if (from === 0 && node.previousSibling) {
+      node.replaceData(from, to - from, insert);
+      editedDirectly = true;
+      continue;
     }
+    sel.setBaseAndExtent(node, from, node, to);
+    if (!document.execCommand("insertText", false, insert)) {
+      node.replaceData(from, to - from, insert);
+      editedDirectly = true;
+    }
+  }
+  if (editedDirectly) {
+    editableHost(range.commonAncestorContainer)?.dispatchEvent(new InputEvent("input", { bubbles: true }));
   }
 }
 
