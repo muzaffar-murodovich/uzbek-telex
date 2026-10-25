@@ -14,8 +14,16 @@ const CODE_EDITOR_SELECTOR = [
   ".file-editor-textarea", // GitHub legacy editor textarea
   ".blob-editor-container", // GitLab single-file editor
   ".gl-source-editor", // GitLab Source Editor
-  "[data-telex-ignore]", // explicit opt-out for site authors
 ].join(",");
+
+/** Explicit opt-out for site authors. */
+const IGNORE_SELECTOR = "[data-telex-ignore]";
+
+/**
+ * Code editors that hold prose: MediaWiki's wikitext syntax highlighting (CodeMirror 6).
+ * Other MediaWiki modes (JS, CSS, Lua) get a different `cm-mw-mode-*` class and stay off.
+ */
+const PROSE_EDITOR_SELECTOR = ".cm-editor.cm-mw-mode-mediawiki";
 
 /** Input types where conversion makes sense. Never password, email, url, number, tel… */
 const TEXT_INPUT_TYPES = new Set(["text", "search"]);
@@ -33,7 +41,9 @@ export function isTextField(el: Element): el is TextField {
  */
 export function eligibleTarget(target: EventTarget | null | undefined): TextField | HTMLElement | null {
   if (!(target instanceof Element)) return null;
-  if (target.closest(CODE_EDITOR_SELECTOR)) return null;
+  if (target.closest(IGNORE_SELECTOR)) return null;
+  const editor = target.closest(CODE_EDITOR_SELECTOR);
+  if (editor && !editor.matches(PROSE_EDITOR_SELECTOR)) return null;
   if (target.tagName === "INPUT" || target.tagName === "TEXTAREA") {
     const field = target as TextField;
     if (!isTextField(field) || field.readOnly || field.disabled) return null;

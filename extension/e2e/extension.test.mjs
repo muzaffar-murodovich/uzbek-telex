@@ -76,7 +76,7 @@ describe("live typing", () => {
     [["o", "\\", "n"], "o\\n"],
   ];
 
-  for (const selector of ["#text", "#search", "#ta", "#ce"]) {
+  for (const selector of ["#text", "#search", "#ta", "#ce", "#wikitext"]) {
     for (const [keys, expected] of cases) {
       test(`${selector} ${JSON.stringify(keys)} → ${JSON.stringify(expected)}`, async () => {
         await page.$eval(selector, (el) => ("value" in el ? (el.value = "") : (el.textContent = "")));
@@ -113,7 +113,7 @@ describe("contenteditable structure", () => {
 describe("fields we must not touch", () => {
   before(fresh);
 
-  for (const selector of ["#pw", "#email", "#code"]) {
+  for (const selector of ["#pw", "#email", "#code", "#wiki-code"]) {
     test(`${selector} stays unchanged`, async () => {
       await type(selector, ["s", "h", "o", "'"]);
       assert.equal(await valueOf(selector), "sho'");
