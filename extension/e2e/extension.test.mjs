@@ -128,7 +128,9 @@ describe("browser integration", () => {
     await type("#ta", ["a", "s", "h"]);
     assert.equal(await valueOf("#ta"), "aş");
     await page.keyboard.down("Control");
-    await page.keyboard.press("z");
+    // Synthetic shortcuts don't reach Chrome's editing commands on macOS;
+    // `commands` runs the native undo the shortcut would trigger.
+    await page.keyboard.press("z", { commands: ["undo"] });
     await page.keyboard.up("Control");
     assert.equal(await valueOf("#ta"), "as");
   });
